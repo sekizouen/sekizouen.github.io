@@ -1825,3 +1825,100 @@ img {
     font-size: 1.2rem;
   }
 }
+
+/* ========================================
+   404エラーページ
+======================================== */
+
+.error-page {
+  min-height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl) var(--spacing-md);
+}
+
+.error-content {
+  text-align: center;
+  max-width: 600px;
+}
+
+.error-title {
+  font-size: 8rem;
+  font-weight: 700;
+  color: var(--color-primary);
+  margin: 0;
+  line-height: 1;
+  font-family: var(--font-primary);
+}
+
+.error-subtitle {
+  font-size: 1.8rem;
+  color: var(--color-text);
+  margin: var(--spacing-md) 0;
+  font-weight: 600;
+}
+
+.error-message {
+  font-size: 1rem;
+  color: var(--color-text-light);
+  line-height: 1.8;
+  margin: var(--spacing-md) 0 var(--spacing-lg) 0;
+}
+
+.error-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  margin-top: var(--spacing-xl);
+}
+
+.btn {
+  display: inline-block;
+  padding: var(--spacing-md) var(--spacing-lg);
+  border-radius: 4px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 1rem;
+}
+
+.btn-primary {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-secondary);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.btn-secondary {
+  background-color: var(--color-white);
+  color: var(--color-primary);
+  border: 2px solid var(--color-primary);
+}
+
+.btn-secondary:hover {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+@media (max-width: 768px) {
+  .error-title {
+    font-size: 5rem;
+  }
+
+  .error-subtitle {
+    font-size: 1.4rem;
+  }
+
+  .error-actions {
+    flex-direction: column;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}
