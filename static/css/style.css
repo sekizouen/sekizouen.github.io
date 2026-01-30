@@ -1630,3 +1630,198 @@ img {
     font-size: 2rem;
   }
 }
+
+/* ========================================
+   統一セクションスタイル（施工事例風）
+======================================== */
+
+/* 共通セクションボックス */
+.section-card {
+  background-color: var(--color-white);
+  border-radius: 8px;
+  padding: var(--spacing-lg);
+  max-width: 1000px;
+  margin: var(--spacing-lg) auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  line-height: 1.9;
+}
+
+/* セクションヘッダー（h2スタイル） */
+.section-card h2 {
+  font-size: 1.6rem;
+  margin: 0 0 var(--spacing-md) 0;
+  color: var(--color-primary);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--color-bg-darker);
+  font-weight: 700;
+}
+
+/* 代表挨拶 */
+.greeting-card p:last-child {
+  text-align: right;
+  font-weight: 600;
+  color: var(--color-primary);
+  margin-top: var(--spacing-md);
+}
+
+/* ========================================
+   会社情報セクション（テーブル形式）
+======================================== */
+
+.company-card {
+  background-color: var(--color-white);
+  border-radius: 8px;
+  padding: var(--spacing-lg);
+  max-width: 1000px;
+  margin: var(--spacing-lg) auto;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  line-height: 1.9;
+}
+
+.company-card-header h2 {
+  font-size: 1.6rem;
+  margin: 0 0 var(--spacing-sm) 0;
+  color: var(--color-primary);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--color-bg-darker);
+  font-weight: 700;
+}
+
+.company-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: var(--spacing-md);
+  background-color: var(--color-white);
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.company-table tr {
+  border-bottom: 1px solid var(--color-bg-darker);
+}
+
+.company-table tr:last-child {
+  border-bottom: none;
+}
+
+.company-table th {
+  text-align: left;
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--color-text-light);
+  background-color: var(--color-bg-dark);
+  white-space: nowrap;
+  width: 120px;
+  vertical-align: top;
+}
+
+.company-table td {
+  padding: var(--spacing-md) var(--spacing-lg);
+  font-size: 1rem;
+  color: var(--color-text);
+  line-height: 1.7;
+}
+
+.company-table td a {
+  color: var(--color-primary);
+  font-weight: 600;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+.company-table td a:hover {
+  color: var(--color-accent);
+  text-decoration: underline;
+}
+
+/* ========================================
+   事業内容セクション
+======================================== */
+
+.services-section h2 {
+  font-size: 1.6rem;
+  margin: 0 0 var(--spacing-md) 0;
+  color: var(--color-primary);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 2px solid var(--color-bg-darker);
+  font-weight: 700;
+}
+
+.services-grid-cards {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md);
+}
+
+.service-detail-card {
+  padding: 0;
+  border: none;
+  background: none;
+}
+
+.service-detail-header h3 {
+  font-size: 1.3rem;
+  margin: 0 0 var(--spacing-sm) 0;
+  color: var(--color-secondary);
+  font-weight: 600;
+}
+
+.service-detail-card p {
+  margin: 0;
+  color: var(--color-text);
+  line-height: 1.9;
+  font-size: 0.95rem;
+}
+
+/* ========================================
+   レスポンシブ対応（セクション全体）
+======================================== */
+
+@media (max-width: 768px) {
+  .section-card {
+    margin: var(--spacing-md) auto;
+    padding: var(--spacing-md);
+  }
+
+  .section-card h2 {
+    font-size: 1.4rem;
+  }
+
+  .company-card {
+    padding: var(--spacing-md);
+  }
+
+  .company-table th,
+  .company-table td {
+    display: block;
+    width: 100%;
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .company-table th {
+    padding-bottom: 0.3rem;
+    background-color: transparent;
+    color: var(--color-primary);
+    font-size: 0.85rem;
+  }
+
+  .company-table td {
+    padding-top: 0.3rem;
+    padding-bottom: var(--spacing-md);
+  }
+
+  .company-table tr {
+    border-bottom: 1px solid var(--color-bg-darker);
+    padding: var(--spacing-sm) 0;
+  }
+
+  .services-grid-cards {
+    grid-template-columns: 1fr;
+  }
+
+  .service-detail-header h3 {
+    font-size: 1.2rem;
+  }
+}
