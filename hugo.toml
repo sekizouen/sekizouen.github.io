@@ -1,0 +1,35 @@
+baseURL = 'https://sekizouen.com/'
+languageCode = 'ja'
+title = '関造園 | 東京都練馬区の造園業'
+defaultContentLanguage = 'ja'
+
+[params]
+  description = '東京都練馬区の造園業。庭づくり、植栽管理など、お庭に関することは関造園にお任せください。'
+  author = '関造園'
+
+[menu]
+  [[menu.main]]
+    name = 'ホーム'
+    url = '/'
+    weight = 1
+  [[menu.main]]
+    name = '施工事例'
+    url = '/works/'
+    weight = 2
+  [[menu.main]]
+    name = '会社概要'
+    url = '/about/'
+    weight = 3
+  [[menu.main]]
+    name = 'お知らせ'
+    url = '/news/'
+    weight = 4
+  [[menu.main]]
+    name = 'お問い合わせ'
+    url = '/contact/'
+    weight = 5
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true

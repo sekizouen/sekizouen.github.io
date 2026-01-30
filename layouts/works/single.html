@@ -1,0 +1,81 @@
+{{ define "main" }}
+
+<article class="work-detail">
+    <!-- パンくずリスト -->
+    <div class="breadcrumb-wrapper">
+        <div class="container">
+            <nav class="breadcrumb">
+                <a href="/">ホーム</a>
+                <span class="separator">›</span>
+                <a href="/works/">施工事例</a>
+                <span class="separator">›</span>
+                <span class="current">{{ .Title }}</span>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container">
+        <header class="work-header">
+            <div class="work-header-content">
+                <h1>{{ .Title }}</h1>
+                <div class="work-meta-inline">
+                    {{ if .Params.category }}
+                    <span class="badge">{{ .Params.category }}</span>
+                    {{ end }}
+                    {{ if .Date }}
+                    <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006/01/02" }}</time>
+                    {{ end }}
+                </div>
+            </div>
+        </header>
+
+        <!-- 画像ギャラリー -->
+        <div class="work-gallery">
+            {{ if .Params.images }}
+                {{ range .Params.images }}
+                <div class="gallery-item">
+                    <img src="{{ . }}" alt="{{ $.Title }}">
+                </div>
+                {{ end }}
+            {{ else if .Params.image }}
+                <div class="gallery-item">
+                    <img src="{{ .Params.image }}" alt="{{ .Title }}">
+                </div>
+            {{ end }}
+        </div>
+
+        <!-- メタ情報 -->
+        <div class="work-meta-section">
+            {{ if .Params.location }}
+            <div class="meta-item">
+                <span class="meta-label">所在地</span>
+                <span class="meta-value">{{ .Params.location }}</span>
+            </div>
+            {{ end }}
+            {{ if .Params.category }}
+            <div class="meta-item">
+                <span class="meta-label">カテゴリ</span>
+                <span class="meta-value">{{ .Params.category }}</span>
+            </div>
+            {{ end }}
+            {{ if .Date }}
+            <div class="meta-item">
+                <span class="meta-label">施工時期</span>
+                <span class="meta-value">{{ .Date.Format "2006/01/02" }}</span>
+            </div>
+            {{ end }}
+        </div>
+
+        <!-- 本文コンテンツ -->
+        <div class="work-content">
+            {{ .Content }}
+        </div>
+
+        <!-- ナビゲーション -->
+        <div class="work-nav">
+            <a href="/works/" class="btn btn-outline">一覧に戻る</a>
+        </div>
+    </div>
+</article>
+
+{{ end }}

@@ -1,0 +1,29 @@
+{{ define "main" }}
+
+<div class="works-page">
+    <div class="container">
+        <header class="page-header">
+            <h1>{{ .Title }}</h1>
+            <p class="page-description">これまでの施工事例をご紹介します</p>
+        </header>
+        <div class="works-grid">
+            {{ range .Pages }}
+            <article class="work-card">
+                <a href="{{ .Permalink }}">
+                    <div class="work-image" style="background-image: url('{{ if .Params.image }}{{ .Params.image }}{{ else }}https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800{{ end }}')">
+                        {{ if .Params.category }}
+                        <span class="work-category">{{ .Params.category }}</span>
+                        {{ end }}
+                        <div class="work-info">
+                            <div class="work-date">{{ .Date.Format "2006/01/02" }}</div>
+                            <h3>{{ .Title }}</h3>
+                        </div>
+                    </div>
+                </a>
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+{{ end }}

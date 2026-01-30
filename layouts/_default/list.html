@@ -1,0 +1,30 @@
+{{ define "main" }}
+
+<div class="list-page">
+    <div class="container">
+        <header class="page-header">
+            <h1>{{ .Title }}</h1>
+            {{ if .Description }}
+            <p class="page-description">{{ .Description }}</p>
+            {{ end }}
+        </header>
+        <div class="page-content">
+            {{ .Content }}
+        </div>
+        <div class="list-items">
+            {{ range .Pages }}
+            <article class="list-item">
+                <h2><a href="{{ .Permalink }}">{{ .Title }}</a></h2>
+                {{ if .Date }}
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006年01月02日" }}</time>
+                {{ end }}
+                {{ if .Summary }}
+                <p>{{ .Summary }}</p>
+                {{ end }}
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</div>
+
+{{ end }}

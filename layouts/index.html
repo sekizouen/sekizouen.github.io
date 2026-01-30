@@ -1,0 +1,68 @@
+{{ define "main" }}
+
+{{ partial "hero.html" . }}
+
+<section class="services">
+    <div class="container">
+        <h2 class="section-title">サービス</h2>
+        <div class="services-grid">
+            <div class="service-card">
+                <div class="service-icon">🌳</div>
+                <h3>庭園設計・施工</h3>
+                <p>お客様のご要望に合わせた、こだわりの庭園をデザイン・施工いたします。</p>
+            </div>
+            <div class="service-card">
+                <div class="service-icon">✂️</div>
+                <h3>植栽管理</h3>
+                <p>定期的な剪定や除草、施肥など、お庭の美しさを保つお手伝いをします。</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="recent-works">
+    <div class="container">
+        <h2 class="section-title">施工事例</h2>
+        <div class="works-grid">
+            {{ range first 3 (where .Site.RegularPages "Type" "works") }}
+            <article class="work-card">
+                <a href="{{ .Permalink }}">
+                    <div class="work-image" style="background-image: url('{{ if .Params.image }}{{ .Params.image }}{{ else }}https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800{{ end }}')">
+                        {{ if .Params.category }}
+                        <span class="work-category">{{ .Params.category }}</span>
+                        {{ end }}
+                        <div class="work-info">
+                            <div class="work-date">{{ .Date.Format "2006/01/02" }}</div>
+                            <h3>{{ .Title }}</h3>
+                        </div>
+                    </div>
+                </a>
+            </article>
+            {{ end }}
+        </div>
+        <div class="text-center">
+            <a href="/works/" class="btn btn-outline">すべての施工事例を見る</a>
+        </div>
+    </div>
+</section>
+
+<section class="recent-news">
+    <div class="container">
+        <h2 class="section-title">お知らせ</h2>
+        <div class="news-list">
+            {{ range first 5 (where .Site.RegularPages "Type" "news") }}
+            <article class="news-item">
+                <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006.01.02" }}</time>
+                <div class="news-content">
+                    <h3><a href="{{ .Permalink }}">{{ .Title }}</a></h3>
+                </div>
+            </article>
+            {{ end }}
+        </div>
+        <div class="text-center">
+            <a href="/news/" class="btn btn-outline">すべてのお知らせを見る</a>
+        </div>
+    </div>
+</section>
+
+{{ end }}
