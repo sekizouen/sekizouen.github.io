@@ -29,6 +29,11 @@ defaultContentLanguage = 'ja'
     url = '/contact/'
     weight = 5
 
+[sitemap]
+  changefreq = 'monthly'
+  priority = 0.5
+  filename = 'sitemap.xml'
+
 [markup]
   [markup.goldmark]
     [markup.goldmark.renderer]
