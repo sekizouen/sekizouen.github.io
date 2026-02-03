@@ -28,6 +28,47 @@
 
     <!-- Stylesheet -->
     <link rel="stylesheet" href="/css/style.css">
+
+    <!-- 構造化データ (JSON-LD) - LocalBusiness -->
+    {{ if .IsHome }}
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "関造園",
+        "description": "{{ .Site.Params.description }}",
+        "url": "{{ .Site.BaseURL }}",
+        "telephone": "090-9146-9448",
+        "faxNumber": "03-3991-3978",
+        "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "早宮1-30-19",
+            "addressLocality": "練馬区",
+            "addressRegion": "東京都",
+            "postalCode": "179-0085",
+            "addressCountry": "JP"
+        },
+        "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": "35.7497919",
+            "longitude": "139.6579834"
+        },
+        "openingHoursSpecification": {
+            "@type": "OpeningHoursSpecification",
+            "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+            "opens": "09:00",
+            "closes": "18:00"
+        },
+        "areaServed": {
+            "@type": "City",
+            "name": "練馬区"
+        },
+        "priceRange": "お見積り無料",
+        "image": "{{ .Site.BaseURL }}images/ogp.png",
+        "sameAs": []
+    }
+    </script>
+    {{ end }}
 </head>
 <body>
     {{ partial "header.html" . }}
