@@ -8,7 +8,7 @@
             <div class="footer-contact">
                 <h4>お問い合わせ</h4>
                 <p>〒{{ .Site.Data.company.address }}</p>
-                <p>TEL: {{ .Site.Data.company.phone }}</p>
+                <p>TEL: <a href="tel:{{ replace .Site.Data.company.phone "-" "" }}">{{ .Site.Data.company.phone }}</a></p>
                 <p>FAX: {{ .Site.Data.company.fax }}</p>
             </div>
             <div class="footer-nav">
