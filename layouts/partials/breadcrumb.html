@@ -1,0 +1,54 @@
+{{ if not .IsHome }}
+<nav class="breadcrumb" aria-label="パンくずリスト">
+    <ol class="breadcrumb-list">
+        <li class="breadcrumb-item">
+            <a href="{{ .Site.BaseURL }}">ホーム</a>
+        </li>
+        {{ if and .Parent (not .Parent.IsHome) }}
+        <li class="breadcrumb-item">
+            <a href="{{ .Parent.Permalink }}">{{ .Parent.Title }}</a>
+        </li>
+        {{ end }}
+        <li class="breadcrumb-item current" aria-current="page">
+            {{ .Title }}
+        </li>
+    </ol>
+</nav>
+
+<!-- 構造化データ: BreadcrumbList -->
+<script type="application/ld+json">
+{
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+        {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "ホーム",
+            "item": "{{ .Site.BaseURL }}"
+        }
+        {{ if and .Parent (not .Parent.IsHome) }}
+        ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ .Parent.Title }}",
+            "item": "{{ .Parent.Permalink }}"
+        }
+        ,{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "{{ .Title }}",
+            "item": "{{ .Permalink }}"
+        }
+        {{ else }}
+        ,{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "{{ .Title }}",
+            "item": "{{ .Permalink }}"
+        }
+        {{ end }}
+    ]
+}
+</script>
+{{ end }}

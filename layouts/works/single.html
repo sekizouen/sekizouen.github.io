@@ -1,20 +1,9 @@
 {{ define "main" }}
 
 <article class="work-detail">
-    <!-- パンくずリスト -->
-    <div class="breadcrumb-wrapper">
-        <div class="container">
-            <nav class="breadcrumb">
-                <a href="/">ホーム</a>
-                <span class="separator">›</span>
-                <a href="/works/">施工事例</a>
-                <span class="separator">›</span>
-                <span class="current">{{ .Title }}</span>
-            </nav>
-        </div>
-    </div>
-
     <div class="container">
+        {{ partial "breadcrumb.html" . }}
+
         <header class="work-header">
             <div class="work-header-content">
                 <h1>{{ .Title }}</h1>
