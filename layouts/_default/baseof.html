@@ -15,6 +15,12 @@
     <meta property="og:image" content="{{ .Site.BaseURL }}images/ogp.png">
     <meta property="og:locale" content="ja_JP">
 
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="{{ if .Title }}{{ .Title }}{{ else }}{{ .Site.Title }}{{ end }}">
+    <meta name="twitter:description" content="{{ if .Description }}{{ .Description }}{{ else }}{{ .Site.Params.description }}{{ end }}">
+    <meta name="twitter:image" content="{{ .Site.BaseURL }}images/ogp.png">
+
     <!-- Canonical URL -->
     <link rel="canonical" href="{{ .Permalink }}">
 
