@@ -6,7 +6,8 @@
       "Bash(hugo:*)",
       "Bash(ls:*)",
       "Bash(curl:*)",
-      "Bash(git add:*)"
+      "Bash(git add:*)",
+      "Bash(grep:*)"
     ]
   },
   "enabledPlugins": {
