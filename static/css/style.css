@@ -214,11 +214,6 @@ img {
 .logo a {
   display: block;
   color: var(--color-primary);
-  transition: transform 0.3s var(--transition-smooth);
-}
-
-.logo a:hover {
-  transform: translateY(-2px);
 }
 
 .logo h1 {
@@ -233,6 +228,12 @@ img {
   letter-spacing: 0.2em;
   color: var(--color-text-light);
   font-weight: 400;
+}
+
+.logo-image {
+  height: 50px;
+  width: auto;
+  display: block;
 }
 
 .main-nav ul {
@@ -1195,6 +1196,10 @@ img {
     flex-wrap: wrap;
   }
 
+  .logo-image {
+    height: 40px;
+  }
+
   .nav-toggle {
     display: flex;
   }
@@ -1317,6 +1322,10 @@ img {
 
   .container {
     padding: 0 var(--spacing-md);
+  }
+
+  .logo-image {
+    height: 35px;
   }
 
   .hero {
