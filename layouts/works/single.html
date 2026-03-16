@@ -40,6 +40,39 @@
             </div>
         </header>
 
+        <!-- Before/After Comparison Section -->
+        {{ if .Params.before_after }}
+        <section class="before-after-section">
+            <h2 class="before-after-title">施工前・施工後</h2>
+
+            {{ range $index, $pair := .Params.before_after }}
+            <div class="before-after-container" data-index="{{ $index }}">
+                <div class="before-after-wrapper">
+                    <!-- Before Image -->
+                    <div class="before-after-item before-item">
+                        <div class="before-after-image-wrapper">
+                            <img src="{{ $pair.before }}" alt="施工前 - {{ $.Title }}" loading="lazy">
+                            <span class="before-after-label before-label">施工前</span>
+                        </div>
+                    </div>
+
+                    <!-- After Image -->
+                    <div class="before-after-item after-item">
+                        <div class="before-after-image-wrapper">
+                            <img src="{{ $pair.after }}" alt="施工後 - {{ $.Title }}" loading="lazy">
+                            <span class="before-after-label after-label">施工後</span>
+                        </div>
+                    </div>
+                </div>
+
+                {{ if $pair.caption }}
+                <p class="before-after-caption">{{ $pair.caption }}</p>
+                {{ end }}
+            </div>
+            {{ end }}
+        </section>
+        {{ end }}
+
         <!-- 画像ギャラリー -->
         <div class="work-gallery">
             {{ if .Params.images }}

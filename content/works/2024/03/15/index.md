@@ -4,6 +4,13 @@ date: 2024-03-15
 category: "和風庭園"
 location: "東京都練馬区"
 image: "/images/work-japanese-garden-01.jpg"
+before_after:
+  - before: "/images/gallery-01.jpg"
+    after: "/images/gallery-02.jpg"
+    caption: "玄関アプローチの改修"
+  - before: "/images/gallery-03.jpg"
+    after: "/images/gallery-04.jpg"
+    caption: "庭園全景"
 images:
   - "/images/work-japanese-garden-01.jpg"
   - "/images/gallery-01.jpg"
