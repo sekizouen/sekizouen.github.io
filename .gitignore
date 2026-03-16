@@ -11,3 +11,9 @@ Thumbs.db
 *.swp
 *.swo
 *~
+
+# node modules
+node_modules/
+
+# AI assistant files
+.claude
