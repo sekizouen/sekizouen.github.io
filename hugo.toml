@@ -1,11 +1,11 @@
 baseURL = 'https://sekizouen.github.io/'
 languageCode = 'ja'
-title = '関造園 | 東京都練馬区の造園業'
+title = '株式会社 関造園 | 東京都練馬区の造園業'
 defaultContentLanguage = 'ja'
 
 [params]
-  description = '東京都練馬区の造園業。庭づくり、植栽管理など、お庭に関することは関造園にお任せください。'
-  author = '関造園'
+  description = '東京都練馬区の造園業。庭づくり、植栽管理など、お庭に関することは株式会社 関造園にお任せください。'
+  author = '株式会社 関造園'
 
 [menu]
   [[menu.main]]

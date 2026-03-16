@@ -1,4 +1,4 @@
-// 関造園サイト - メインJavaScript
+// 株式会社 関造園サイト - メインJavaScript
 
 document.addEventListener('DOMContentLoaded', function() {
     // モバイルメニュートグル
@@ -52,8 +52,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // ライトボックス機能
     const galleryImages = document.querySelectorAll('.gallery-item img');
+    const beforeAfterImages = document.querySelectorAll('.before-after-item img');
 
-    if (galleryImages.length > 0) {
+    if (galleryImages.length > 0 || beforeAfterImages.length > 0) {
         // ライトボックスのHTML要素を作成
         const lightbox = document.createElement('div');
         lightbox.className = 'lightbox';
@@ -294,5 +295,38 @@ document.addEventListener('DOMContentLoaded', function() {
                 }
             }
         }
+
+        // ビフォーアフター画像用のライトボックス（横移動なし）
+        beforeAfterImages.forEach((img) => {
+            img.parentElement.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                // 元のギャラリー画像配列を保存
+                const originalImages = [...images];
+
+                // 画像配列を一時的にこの1枚だけに置き換え
+                images.length = 0;
+                images.push(img);
+
+                // ライトボックスを開く（images.length=1でナビゲーション自動非表示）
+                openLightbox(0);
+
+                // ライトボックスが閉じられたら元の配列に戻す
+                const restoreOriginalImages = () => {
+                    setTimeout(() => {
+                        images.length = 0;
+                        images.push(...originalImages);
+                    }, 100);
+                };
+
+                // 閉じるイベントをリッスン
+                lightbox.addEventListener('transitionend', function onClose() {
+                    if (!lightbox.classList.contains('active')) {
+                        restoreOriginalImages();
+                        lightbox.removeEventListener('transitionend', onClose);
+                    }
+                });
+            });
+        });
     }
 });
