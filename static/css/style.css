@@ -582,6 +582,63 @@ img {
 }
 
 /* ========================================
+   お客様の声セクション
+======================================== */
+
+.testimonials {
+  padding: var(--spacing-lg) 0;
+  background-color: var(--color-white);
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-md);
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.testimonial-card {
+  background-color: var(--color-bg);
+  border: 1px solid var(--color-bg-darker);
+  border-radius: 12px;
+  padding: var(--spacing-md);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s var(--transition-smooth), box-shadow 0.3s var(--transition-smooth);
+}
+
+.testimonial-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 14px 32px rgba(26, 77, 58, 0.1);
+}
+
+.testimonial-meta {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-bottom: var(--spacing-sm);
+  font-weight: 700;
+  color: var(--color-primary);
+}
+
+.testimonial-date {
+  font-size: 0.95rem;
+  letter-spacing: 0.04em;
+}
+
+.testimonial-customer {
+  font-size: 1.05rem;
+  color: var(--color-secondary);
+}
+
+.testimonial-card p {
+  color: var(--color-text);
+  line-height: 1.9;
+  font-size: 0.95rem;
+}
+
+/* ========================================
    お知らせセクション
 ======================================== */
 
@@ -1340,6 +1397,10 @@ img {
     gap: var(--spacing-md);
   }
 
+  .testimonials-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .work-image {
     aspect-ratio: 4 / 3;
   }
@@ -1424,6 +1485,11 @@ img {
   .works-grid {
     grid-template-columns: 1fr;
     gap: var(--spacing-md);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    max-width: 500px;
   }
 
   .work-card {

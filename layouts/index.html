@@ -46,6 +46,23 @@
     </div>
 </section>
 
+<section class="testimonials">
+    <div class="container">
+        <h2 class="section-title">お客様の声</h2>
+        <div class="testimonials-grid">
+            {{ range .Site.Data.testimonials }}
+            <article class="testimonial-card">
+                <div class="testimonial-meta">
+                    <span class="testimonial-date">{{ .date }}</span>
+                    <span class="testimonial-customer">{{ .customer }}</span>
+                </div>
+                <p>{{ .text }}</p>
+            </article>
+            {{ end }}
+        </div>
+    </div>
+</section>
+
 <section class="recent-news">
     <div class="container">
         <h2 class="section-title">お知らせ</h2>
