@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://sekizouen.github.io/sitemap.xml
+Sitemap: https://sekizouen.com/sitemap.xml
